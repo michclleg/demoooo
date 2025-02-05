@@ -35,6 +35,19 @@
             background-color: #222;
             margin-top: 20px;
         }
+		.line {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .line:hover {
+      color: #1db954;
+    }
+    .annotation {
+      display: none;
+      margin-left: 20px;
+      font-size: 0.9em;
+      color: #b3b3b3;
+    }
     </style>
 </head>
 <body>
@@ -58,6 +71,39 @@
             <p>How does Nettspend's music affect the culture, industry, and listeners?</p>
         </div>
     </div>
+	 <div class="container">
+    <h1>Interactive Lyrics</h1>
+    <p>Click on a lyric to see the explanation:</p>
+    <div class="line" onclick="toggleAnnotation('annotation1')">
+      "I'm just a vessel for the rhymes I send"
+      <div id="annotation1" class="annotation">
+        Nettspend uses "vessel" as a metaphor for being a conduit for creativity, suggesting the rhymes come from a higher power or deeper inspiration.
+      </div>
+    </div>
+    <div class="line" onclick="toggleAnnotation('annotation2')">
+      "Paper trails lead back to the past I fend"
+      <div id="annotation2" class="annotation">
+        This line refers to the struggles of financial and personal history, with "paper trails" symbolizing documentation of past decisions.
+      </div>
+    </div>
+    <div class="line" onclick="toggleAnnotation('annotation3')">
+      "Stuck between a dream and a nightmare's end"
+      <div id="annotation3" class="annotation">
+        Nettspend juxtaposes ambition (dream) and fear (nightmare), reflecting the duality of pursuing success.
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleAnnotation(id) {
+      const annotation = document.getElementById(id);
+      if (annotation.style.display === "block") {
+        annotation.style.display = "none";
+      } else {
+        annotation.style.display = "block";
+      }
+    }
+  </script>
+	
     <footer>Contact us for submissions or to join the discussion.</footer>
 </body>
 </html>
